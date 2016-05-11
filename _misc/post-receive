@@ -1,0 +1,12 @@
+#!/bin/bash
+GIT_REPO=$HOME/eden-project.git
+TMP_GIT_CLONE=$HOME/tmp/eden-project
+PUBLIC_WWW=/var/www/eden-project
+PATH=usr/local/rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/opt/puppetlabs/bin:/opt/puppetlabs/bin/
+git clone $GIT_REPO $TMP_GIT_CLONE
+cd $TMP_GIT_CLONE
+source /etc/profile.d/rvm.sh
+bundle install --path .
+bundle exec jekyll build -s $TMP_GIT_CLONE -d $PUBLIC_WWW
+rm -Rf $TMP_GIT_CLONE
+exit
