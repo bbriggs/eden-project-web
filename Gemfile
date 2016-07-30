@@ -1,3 +1,4 @@
 source 'https://rubygems.org'
-gem 'github-pages'
-gem 'jekyll-redirect-from'
+gem 'jekyll', '~> 2.3'
+gem 'execjs'
+gem 'therubyracer'
